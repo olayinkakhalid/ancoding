@@ -52,33 +52,36 @@ const Nav = () => {
                 </button>
             </div>
 
-            {/* MOBILE MENU OVERLAY */}
-            {open && (
-                <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-40">
-                    <ul className="flex flex-col items-center space-y-5 text-2xl font-bold text-white">
-                        <li>
-                            <a href="/" onClick={() => setOpen(false)} className="hover:text-green-500 transition">HOME</a>
-                        </li>
-                        <li>
-                            <a href="/courses" onClick={() => setOpen(false)} className="hover:text-green-500 transition">COURSES</a>
-                        </li>
-                        <li>
-                            <a href="/practice" onClick={() => setOpen(false)} className="hover:text-green-500 transition">PRACTICE</a>
-                        </li>
-                        <li>
-                            <a href="/projects" onClick={() => setOpen(false)} className="hover:text-green-500 transition">PROJECTS</a>
-                        </li>
-                        <li>
-                            <button
-                                onClick={() => setOpen(false)}
-                                className="px-8 py-3 bg-green-500 text-black font-bold rounded-lg hover:bg-green-400 transition"
-                            >
-                                Login
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            )}
+            {/* MOBILE MENU OVERLAY WITH ANIMATION */}
+            <div
+                className={`fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-40
+                    transition-all duration-500 ease-in-out
+                    ${open ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10 pointer-events-none'}
+                `}
+            >
+                <ul className="flex flex-col items-center space-y-15 text-2xl font-bold text-white">
+                    <li>
+                        <a href="/" onClick={() => setOpen(false)} className="hover:text-green-500 transition">HOME</a>
+                    </li>
+                    <li>
+                        <a href="/courses" onClick={() => setOpen(false)} className="hover:text-green-500 transition">COURSES</a>
+                    </li>
+                    <li>
+                        <a href="/practice" onClick={() => setOpen(false)} className="hover:text-green-500 transition">PRACTICE</a>
+                    </li>
+                    <li>
+                        <a href="/projects" onClick={() => setOpen(false)} className="hover:text-green-500 transition">PROJECTS</a>
+                    </li>
+                    <li>
+                        <button
+                            onClick={() => setOpen(false)}
+                            className="px-8 py-3 bg-green-500 text-black font-bold rounded-lg hover:bg-green-400 transition"
+                        >
+                            Login
+                        </button>
+                    </li>
+                </ul>
+            </div>
 
         </nav>
     )
