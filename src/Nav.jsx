@@ -54,8 +54,8 @@ const Nav = () => {
 
             {/* MOBILE MENU OVERLAY */}
             {open && (
-                <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-40 py-48">
-                    <ul className="flex flex-col items-center space-y-5 text-lg font-bold text-white">
+                <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-40">
+                    <ul className="flex flex-col items-center space-y-5 text-2xl font-bold text-white">
                         <li>
                             <a href="/" onClick={() => setOpen(false)} className="hover:text-green-500 transition">HOME</a>
                         </li>
