@@ -54,8 +54,20 @@ const Course = () => {
             </div>
 
             {/* TRACK PROGRESS */}
-            <div>
-                
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <p className='text-center font-bold text-5xl mb-9 p-5'>TRACK YOUR PROGRESS</p>
+
+                <div className='bg-gray-200 shadow-xl rounded-xl p-8 max-w-4xl mx-auto my-12' data-aos="fade-up" data-aos-duration="2000">
+                    <p className="text-center text-lg">
+                        Stay motivated and never lose track of your learning journey with our built-in progress tracker. See how many lessons you’ve completed, which modules are next, and watch your skills grow step by step. With clear visual indicators, you’ll always know exactly where you are in your course and what’s left to master.
+                    </p>
+
+                    <p className="text-center text-gray-700 m-9">Course Progress: 3 of 5 lessons</p>
+
+                    <div className="w-full bg-white h-4 rounded-full">
+                        <div className="bg-green-500 h-4 rounded-full w-3/5"></div> {/* 60% completed */}
+                    </div>
+                </div>
             </div>
 
         </div>
