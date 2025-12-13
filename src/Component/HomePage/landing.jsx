@@ -1,5 +1,5 @@
 import React from 'react'
-import world from '../../assets/anworld.jpg'
+import anvid from '../../assets/anvid.mp4'
 
 const Landing = () => {
     return (
@@ -7,11 +7,9 @@ const Landing = () => {
 
             {/* HERO SECTION */}
             <div className="relative w-full h-[650px]" data-aos="fade-up" data-aos-duration="2000">
-                <img
-                    src={world}
-                    alt="World"
-                    className="w-full h-full object-cover brightness-50"
-                />
+
+                <video src={anvid} className='brightness-90 object-cover h-full w-full' autoPlay loop muted />
+
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
                     <h1 className="text-5xl font-bold text-white mb-4">
                         Learn to Code <span className="text-green-500">Fast & Easy</span>
@@ -29,7 +27,7 @@ const Landing = () => {
             <section className="py-20 bg-gray-100" data-aos="fade-up" data-aos-duration="1000">
                 <h2 className="text-3xl font-bold text-center mb-12">Why Learn With AN-CODING?</h2>
                 <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center px-4">
-                    <div className="bg-green-500 p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-up"  data-aos-duration="1000">
+                    <div className="bg-green-500 p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-up" data-aos-duration="1000">
                         <span className="text-4xl">🚀</span>
                         <h3 className="font-bold text-xl mt-4">Fast Learning</h3>
                         <p className="mt-2 text-black">Step by step coding tutorials for beginners.</p>
