@@ -108,7 +108,7 @@ const Course = () => {
         <div className='w-full'>
             {/* HERO SECTION */}
             <div className=' w-full h-[650px] relative' data-aos="fade-up" data-aos-duration="1000">
-                <img src={anlogo} alt="" className='brightness-90 object-cover h-full w-full' />
+                <video src={anvid} className='brightness-90 object-cover h-full w-full' autoPlay loop muted />
                 <div className='absolute inset-0 text-white justify-center item-center text-center flex flex-col px-4'>
                     <p className='text-5xl font-bold mb-4'>CODE WITH <span className='text-green-500'>AN-CODING</span></p>
                     <p className='max-w-xl mx-auto text-center text-lg'>
