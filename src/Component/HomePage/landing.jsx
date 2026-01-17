@@ -8,7 +8,7 @@ const Landing = () => {
             {/* HERO SECTION */}
             <div className="relative w-full h-[650px]" data-aos="fade-up" data-aos-duration="2000">
 
-                <video src={anvid} className='brightness-90 object-cover h-full w-full' autoPlay loop muted />
+                <video src={anvid} className='brightness-90 object-cover h-full w-full' autoPlay loop muted playsInline />
 
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
                     <h1 className="text-5xl font-bold text-white mb-4">

@@ -107,15 +107,32 @@ const Course = () => {
     return (
         <div className='w-full'>
             {/* HERO SECTION */}
-            <div className=' w-full h-[650px] relative' data-aos="fade-up" data-aos-duration="1000">
-                <video src={anvid} className='brightness-90 object-cover h-full w-full' autoPlay loop muted />
-                <div className='absolute inset-0 text-white justify-center item-center text-center flex flex-col px-4'>
-                    <p className='text-5xl font-bold mb-4'>CODE WITH <span className='text-green-500'>AN-CODING</span></p>
-                    <p className='max-w-xl mx-auto text-center text-lg'>
+            <div className="w-full h-[650px] relative">
+                <video
+                    src={anvid}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    onEnded={e => e.target.play()}
+                    className="brightness-90 object-cover h-full w-full pointer-events-none"
+                />
+
+                <div
+                    className="absolute inset-0 text-white flex flex-col justify-center items-center text-center px-4"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                >
+                    <p className="text-5xl font-bold mb-4">
+                        CODE WITH <span className="text-green-500">AN-CODING</span>
+                    </p>
+                    <p className="max-w-xl mx-auto text-lg">
                         Start your coding journey with clear, beginner-friendly courses. Learn the basics, practice real project and build the skills that actually matter in today's tech world.
                     </p>
                 </div>
             </div>
+
 
             {/* COURSE SLIDER SECTION */}
             <div className='bg-gray-100 flex justify-center items-center p-6' data-aos="fade-up" data-aos-duration="1000">
