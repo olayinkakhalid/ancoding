@@ -9,21 +9,23 @@ const Landing = () => {
             {/* HERO SECTION */}
             <div className="relative w-full h-[650px]">
 
-                <video
-                    src={anvid}
-                    poster={pooster}
+                {/* <video
+                    src={pooster}
+                    // poster={pooster}
                     className="brightness-90 object-cover h-full w-full"
                     autoPlay
                     loop
                     muted
                     playsInline
                     preload="auto"
-                />
+                /> */}
 
-                  <div className="absolute inset-0 bg-black/30" />
+                <img src={pooster} className="brightness-60 object-cover h-full w-full" />
+
+                  {/* <div className="absolute inset-0 bg-black/30" /> */}
 
                 {/* TEXT ON TOP */}
-                <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+                <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4" data-aos="fade-up" data-aos-duration="1000">
                     <h1 className="text-5xl font-bold text-white mb-4">
                         Learn to Code <span className="text-green-500">Fast & Easy</span>
                     </h1>

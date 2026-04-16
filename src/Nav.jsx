@@ -8,7 +8,9 @@ const Nav = () => {
 
             {/* LOGO */}
             <div className="text-2xl font-extrabold tracking-wider z-50">
-                AN-CO<span className="text-green-500">D</span>IN<span className="text-green-500">G</span>
+                <a href="/" className='cursor-pointer'>
+                    AN-CO<span className="text-green-500">D</span>IN<span className="text-green-500">G</span>
+                </a>
             </div>
 
             {/* DESKTOP LINKS */}

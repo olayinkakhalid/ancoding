@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import anvid from '../../assets/anvid.mp4'
+import pooster from '../../assets/pooster.jpg'
 
 const courseData = [
     { title: "Learn HTML", desc: "Master the structure of the web with clear HTML tutorials." },
@@ -103,7 +104,9 @@ const Course = () => {
         <div className='w-full'>
             {/* HERO SECTION */}
             <div className="w-full h-[650px] relative">
-                <video src={anvid} className='brightness-90 object-cover h-full w-full' autoPlay loop muted playsInline />
+                {/* <video src={anvid} className='brightness-90 object-cover h-full w-full' autoPlay loop muted playsInline /> */}
+        
+                <img src={pooster} alt="" className="brightness-60 object-cover h-full w-full" />
 
                 <div
                     className="absolute inset-0 text-white flex flex-col justify-center items-center text-center px-4"
