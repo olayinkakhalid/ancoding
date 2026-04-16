@@ -138,7 +138,7 @@ const Course = () => {
 
             {/* TRACK PROGRESS */}
             <div data-aos="fade-up" data-aos-duration="1000">
-                <p className='text-center font-bold text-5xl mb-9 p-5'>TRACK YOUR PROGRESS</p>
+                <p className='text-center font-bold text-2xl sm:text-3xl md:text-5xl mb-9 p-5'>TRACK YOUR PROGRESS</p>
 
                 <div className='bg-gray-200 shadow-xl rounded-xl p-8 max-w-4xl mx-auto my-12' data-aos="fade-up" data-aos-duration="2000">
                     <p className="text-center text-lg">
@@ -155,7 +155,7 @@ const Course = () => {
 
             {/* TESTIMONIAL SECTION */}
             <div className="py-12 bg-gray-100 mb-12" data-aos="fade-up" data-aos-duration="1000">
-                <h2 className="text-5xl font-bold text-center mb-8">What Our Students Say</h2>
+                <h2 className="text-2xl md:text-5xl font-bold text-center mb-8">What Our Students Say</h2>
                 <div className="flex flex-col sm:flex-row gap-8 justify-center items-stretch">
                     <div className="bg-white shadow-lg rounded-xl p-6 max-w-sm mx-auto" data-aos="fade-up" data-aos-duration="2000">
                         <p className="text-gray-700 mb-4">
