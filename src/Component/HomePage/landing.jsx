@@ -1,5 +1,6 @@
 import React from 'react'
 import anvid from '../../assets/anvid.mp4'
+import pooster from '../../assets/pooster.jpg'
 
 const Landing = () => {
     return (
@@ -10,6 +11,7 @@ const Landing = () => {
 
                 <video
                     src={anvid}
+                    poster={pooster}
                     className="brightness-90 object-cover h-full w-full"
                     autoPlay
                     loop
@@ -18,8 +20,7 @@ const Landing = () => {
                     preload="auto"
                 />
 
-                {/* DARK OVERLAY */}
-                <div className="absolute inset-0 bg-black/30" />
+                  <div className="absolute inset-0 bg-black/30" />
 
                 {/* TEXT ON TOP */}
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
@@ -38,7 +39,7 @@ const Landing = () => {
 
             {/* FEATURES SECTION */}
             <section className="py-20 bg-gray-100" data-aos="fade-up" data-aos-duration="1000">
-                <h2 className="text-3xl font-bold text-center mb-12">Why Learn With AN-CODING?</h2>
+                <h2 className="text-3xl md:text-2xl font-bold text-center mb-12">Why Learn With AN-CODING?</h2>
                 <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center px-4">
                     <div className="bg-green-500 p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-up" data-aos-duration="1000">
                         <span className="text-4xl">🚀</span>
