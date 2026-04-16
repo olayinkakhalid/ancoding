@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import anvid from '../../assets/anvid.mp4'
 import pooster from '../../assets/pooster.jpg'
+import htmllogo from '../../assets/htmllogo.jpg'
+import csslogo from '../../assets/csslogo.jpg'
+import jslogo from '../../assets/jslogo.jpg'
+import reactlogo from '../../assets/recatlogo.jpg'
 
 const courseData = [
-    { title: "Learn HTML", desc: "Master the structure of the web with clear HTML tutorials." },
-    { title: "Learn CSS", desc: "Style your web pages beautifully with practical CSS lessons." },
-    { title: "Learn JavaScript", desc: "Add interactivity and logic to your web projects using JS." },
-    { title: "Learn React", desc: "Build dynamic user interfaces with modern React techniques." },
+    { title: "Learn HTML", desc: "Master the structure of the web with clear HTML tutorials.", img: htmllogo },
+    { title: "Learn CSS", desc: "Style your web pages beautifully with practical CSS lessons.", img: csslogo },
+    { title: "Learn JavaScript", desc: "Add interactivity and logic to your web projects using JS.", img: jslogo },
+    { title: "Learn React", desc: "Build dynamic user interfaces with modern React techniques.", img: reactlogo },
 ]
 
 const faqData = [
@@ -37,105 +41,174 @@ const faqData = [
         ],
         answers: [
             "Yes, our platform is mobile-friendly.",
-            "YES, you need VScode for the web is still working on the online code editor.",
-            "Currently, videos are not available online.",
+            "Yes, you need VS Code for practice.",
+            "Currently, videos are not available offline.",
             "You’ll have access indefinitely once enrolled.",
         ],
     },
     {
         category: "Progress & Certification",
         questions: [
-            "Is there a progress tracker to see how much I’ve completed?",
-            "Do I get a certificate after completing a course?",
-            "Can I revisit lessons after finishing the course?",
+            "Is there a progress tracker?",
+            "Do I get a certificate?",
+            "Can I revisit lessons?",
         ],
         answers: [
-            "Yes, our platform tracks your progress automatically.",
-            "Yes, certificates are provided for completed courses.",
-            "Absolutely! You can revisit lessons anytime.",
+            "Yes, progress is tracked automatically.",
+            "Yes, certificates are provided.",
+            "Yes, you can revisit anytime.",
         ],
     },
     {
         category: "Pricing & Payment",
         questions: [
-            "Are all courses free or are some paid?",
-            "How can I pay for premium courses?",
-            "Is there a refund policy for paid courses?",
+            "Are courses free?",
+            "How do I pay for premium courses?",
+            "Is there a refund policy?",
         ],
         answers: [
-            "Some courses are free; premium courses require payment.",
-            "You can pay using credit/debit cards or online payment systems.",
-            "Refunds are handled according to our payment policy.",
+            "Some are free, some are paid.",
+            "You can pay via cards or online payments.",
+            "Refunds depend on policy terms.",
         ],
     },
     {
         category: "Support & Community",
         questions: [
-            "Can I ask questions if I get stuck?",
-            "Is there a community or forum for learners?",
-            "How do I contact support if something isn’t working?",
+            "Can I ask questions?",
+            "Is there a community?",
+            "How do I contact support?",
         ],
         answers: [
-            "Yes, you can ask questions within the course forum.",
-            "Yes, we have a community where learners help each other.",
-            "Support is available via email or chat on the platform.",
+            "Yes, inside the platform.",
+            "Yes, learners interact in the community.",
+            "Via email or chat support.",
         ],
     },
 ]
 
 const Course = () => {
+
     const [current, setCurrent] = useState(0)
     const [openIndex, setOpenIndex] = useState(null)
+    const [isAnimating, setIsAnimating] = useState(false)
+
+    const nextSlide = () => {
+        if (isAnimating) return
+        setIsAnimating(true)
+        setCurrent(prev => (prev + 1) % courseData.length)
+    }
+
+    const prevSlide = () => {
+        if (isAnimating) return
+        setIsAnimating(true)
+        setCurrent(prev => (prev - 1 + courseData.length) % courseData.length)
+    }
+
+    const goToSlide = (index) => {
+        if (isAnimating) return
+        setIsAnimating(true)
+        setCurrent(index)
+    }
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrent(prev => (prev + 1) % courseData.length)
-        }, 3000)
+            nextSlide()
+        }, 3500)
+
         return () => clearInterval(interval)
     }, [])
 
-    const { title, desc } = courseData[current]
-
-    const toggleFAQ = (key) => {
-        setOpenIndex(openIndex === key ? null : key)
-    }
-
     return (
         <div className='w-full'>
-            {/* HERO SECTION */}
-            <div className="w-full h-[650px] relative">
-                {/* <video src={anvid} className='brightness-90 object-cover h-full w-full' autoPlay loop muted playsInline /> */}
-        
-                <img src={pooster} alt="" className="brightness-60 object-cover h-full w-full" />
 
-                <div
-                    className="absolute inset-0 text-white flex flex-col justify-center items-center text-center px-4"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                >
+            {/* HERO */}
+            <div className="w-full h-[650px] relative">
+                <img
+                    src={pooster}
+                    alt=""
+                    className="brightness-60 object-cover h-full w-full"
+                />
+
+                <div className="absolute inset-0 text-white flex flex-col justify-center items-center text-center px-4">
                     <p className="text-5xl font-bold mb-4">
                         CODE WITH <span className="text-green-500">AN-CODING</span>
                     </p>
-                    <p className="max-w-xl mx-auto text-lg">
-                        Start your coding journey with clear, beginner-friendly courses. Learn the basics, practice real project and build the skills that actually matter in today's tech world.
+                    <p className="max-w-xl text-lg">
+                        Start your coding journey with beginner-friendly courses and real projects.
                     </p>
                 </div>
             </div>
 
+            {/* LEVEL 2 CAROUSEL */}
+            <div className='bg-gray-100 flex justify-center items-center p-6'>
+                <div className='relative w-full max-w-5xl overflow-hidden bg-white shadow-xl rounded-lg'>
 
-            {/* COURSE SLIDER SECTION */}
-            <div className='bg-gray-100 flex justify-center items-center p-6' data-aos="fade-up" data-aos-duration="1000">
-                <div className='flex flex-col sm:flex-row gap-8 bg-white p-3 w-full max-w-5xl shadow-xl rounded-lg items-center'>
-                    <div className='w-full sm:w-[30%] h-72 bg-gray-200 rounded-lg shadow-xl flex items-center justify-center text-center px-4'>
-                        <span className='text-xl font-bold text-gray-800'>{title}</span>
+                    {/* TRACK */}
+                    <div
+                        className='flex transition-transform duration-700 ease-in-out'
+                        style={{ transform: `translateX(-${current * 100}%)` }}
+                        onTransitionEnd={() => setIsAnimating(false)}
+                    >
+                        {courseData.map((course, index) => (
+                            <div
+                                key={index}
+                                className='min-w-full flex flex-col sm:flex-row gap-8 p-6 items-center'
+                            >
+                                <div className='w-full sm:w-[30%] h-72 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden'>
+                                    <img
+                                        src={course.img}
+                                        alt={course.title}
+                                        className='h-full w-full object-contain p-6'
+                                    />
+                                </div>
+
+                                <div className='flex-1 text-center'>
+                                    <h1 className='font-bold text-4xl md:text-5xl mb-3'>
+                                        {course.title}
+                                    </h1>
+                                    <p className='text-gray-700 mb-5'>
+                                        {course.desc}
+                                    </p>
+
+                                    <button className='px-6 py-3 bg-green-500 font-bold rounded-lg hover:bg-green-400 transition'>
+                                        Start Learning
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                    <div className='text-black flex flex-col items-center justify-center flex-1'>
-                        <h1 className='font-bold text-5xl pb-5 text-center'>{title}</h1>
-                        <p className='max-w-xl text-center text-lg pb-5'>{desc}</p>
-                        <button className='px-6 py-3 bg-green-500 text-black font-bold rounded-lg hover:bg-green-400 transition'>
-                            Start Learning
-                        </button>
+
+                    {/* BUTTONS */}
+                    <button
+                        onClick={prevSlide}
+                        className='absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-black/40 text-white rounded-full'
+                    >
+                        ‹
+                    </button>
+
+                    <button
+                        onClick={nextSlide}
+                        className='absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-black/40 text-white rounded-full'
+                    >
+                        ›
+                    </button>
+
+                    {/* DOTS */}
+                    <div className='flex justify-center gap-2 py-4'>
+                        {courseData.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => goToSlide(i)}
+                                className={`transition-all duration-300 rounded-full ${
+                                    i === current
+                                        ? 'bg-green-500 w-5 h-2'
+                                        : 'bg-gray-400 w-2 h-2'
+                                }`}
+                            />
+                        ))}
                     </div>
+
                 </div>
             </div>
 
